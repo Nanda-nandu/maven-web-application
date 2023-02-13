@@ -1,5 +1,7 @@
 node{
     def mavenhome = tool name: "3.8.7"
+    
+  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])  
 //checkout code stage 
 stage ('checkoutcode'){
 git credentialsId: 'da4c53e5-ffa1-4f06-afba-b7114a0a7be1', url: 'https://github.com/Nanda-nandu/maven-web-application.git'}
