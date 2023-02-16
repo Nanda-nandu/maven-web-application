@@ -11,7 +11,7 @@ git credentialsId: 'da4c53e5-ffa1-4f06-afba-b7114a0a7be1', url: 'https://github.
 
 //build
 stage('build'){
-sh "${mavenhome}/bin/mvn clean packag"
+sh "${mavenhome}/bin/mvn clean package"
 
 }
 /*
