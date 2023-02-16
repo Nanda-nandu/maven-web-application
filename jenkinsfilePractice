@@ -6,6 +6,7 @@ try{
   properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])  
 //checkout code stage 
 stage ('checkoutcode'){
+sendslackNotification("STARTED")
 git credentialsId: 'da4c53e5-ffa1-4f06-afba-b7114a0a7be1', url: 'https://github.com/Nanda-nandu/maven-web-application.git'}
 
 //build
